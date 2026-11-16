@@ -41,12 +41,13 @@ pacman -S --needed --noconfirm linux-cachyos-bore linux-cachyos-bore-headers lin
 echo "Run: vim /boot/EFI/refind/refind.conf
 Add:
 default_selection 'vmlinuz-linux-cachyos-bore'
-fold_linux_kernels false"
+fold_linux_kernels false
+use_graphics_for osx,linux,windows"
 
 
 echo "Run: vim /boot/refind_linux.conf
 Add:
-mitigations=off usbcore.autosuspend=-1"
+mitigations=off usbcore.autosuspend=-1 loglevel=3"
 
 
 ###################################3
