@@ -63,8 +63,9 @@ mitigations=off usbcore.autosuspend=-1 loglevel=3"
 #Install: boot manager + splash screen"
 #pacman -S --needed --noconfirm refind plymouth
 
-#mv refind-theme /boot/EFI/refind/themes/dark-minimal
-#echo "include themes/dark-minimal/theme.conf >> /boot/EFI/refind/refind.conf"
+mkdir /boot/EFI/refind/themes
+mv refind-theme /boot/EFI/refind/themes/dark-minimal
+echo "include themes/dark-minimal/theme.conf >> /boot/EFI/refind/refind.conf"
 #echo "mitigations=off usbcore.autosuspend=-1 quiet" >> /boot/refind_linux.conf
 
 #mkdir -p /usr/share/plymouth/themes
