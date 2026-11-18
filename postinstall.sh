@@ -31,7 +31,7 @@ RESET='\033[0m'
 echo -e "${GREEN}Installing software${RESET}" 
 pacman -Syyu --noconfirm
 cachyos-rate-mirrors
-pacman -S --needed --noconfirm linux-cachyos-bore linux-cachyos-bore-headers linux-cachyos-bore-nvidia-open nvidia-utils steam brave-bin doublecmd-qt6 zed veracrypt dkms python-pip qbittorrent discord nvtop iotop-c bc 7zip fio kodi handbrake mkvtoolnix-gui hardinfo2 cpu-x
+pacman -S --needed --noconfirm linux-cachyos-bore linux-cachyos-bore-headers linux-cachyos-bore-nvidia-open nvidia-utils steam brave-bin doublecmd-qt6 zed veracrypt dkms python-pip qbittorrent discord nvtop iotop-c bc 7zip fio kodi handbrake mkvtoolnix-gui hardinfo2 cpu-x skanlite skanpage
 
 # maybe later: pciutils sudo-rs uutils-coreutils ntpd-rs bottom rustnet netscanner
 
@@ -220,9 +220,11 @@ read -rp "Username: " username
 ## Add user and enable rootless GPU resource access
 #usermod -aG seat $username
 
+git clone https://github.com/eandmsz/mpv-scripts .config/mpv
 chown -R $username:$username $(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd) # change ownership of the postinstall files to be under the new user
 cp -a wallpapers_3440x1440 /home/$username/Pictures/
 cp -a .config /home/$username/
+cp -a /home/$username/.config/mpv/
 
 echo -e "${GREEN}
 Create Applications folder for AppImages${RESET}" # and a service that automatically makes them executable
