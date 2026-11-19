@@ -228,7 +228,7 @@ cp -a /home/$username/.config/mpv/
 
 echo -e "${GREEN}
 Create Applications folder for AppImages${RESET}" # and a service that automatically makes them executable
-chmod +x /home/$username/.config/systemd/user/default.target.wants/desktoplinker.sh
+chmod +x /home/$username/.config/systemd/user/desktoplinker.sh
 systemctl --user -M $username@ daemon-reload
 systemctl --user -M $username@ enable --now appimage-chmod.path
 
