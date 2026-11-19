@@ -12,4 +12,4 @@ Description=Make AppImages in ~/Applications executable and create launcher entr
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/find %h/Applications -maxdepth 1 -type f -iname "*.AppImage" ! -perm -u+x -exec chmod u+x {} +
-ExecStart=%h/.config/systemd/user/default.target.wants/desktoplinker.sh
+ExecStart=%h/.config/systemd/user/desktoplinker.sh
