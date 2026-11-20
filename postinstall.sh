@@ -231,6 +231,6 @@ systemctl --user -M $username@ daemon-reload
 systemctl --user -M $username@ enable --now appimage-chmod.path
 
 
-
+# TODO: ls colors should match doublecmd: red for executable files dark gray for dirs
 
 #plymouth-set-default-theme -l
