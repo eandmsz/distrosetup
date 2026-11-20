@@ -15,6 +15,7 @@
 # Crossout steam launch params:  __GL_SHADER_DISK_CACHE_SIZE=10737418240 __GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1 %command%
 # CachyOS is much faster than Fedora and doesn't need any tweaking. Fast desktop animations, responsive desktop, better colors, net/io/kernel schedulers well chosen, 1000Hz kernel ticker and mouse polling, everything working oob
 
+# Download as appimage: viber, photocraft, comfyui, viewskater
 
 if [ "$(id -u)" -ne 0 ]; then
     echo "This script must be run as root." >&2
