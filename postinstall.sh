@@ -15,8 +15,6 @@
 # Crossout steam launch params:  __GL_SHADER_DISK_CACHE_SIZE=10737418240 __GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1 %command%
 # CachyOS is much faster than Fedora and doesn't need any tweaking. Fast desktop animations, responsive desktop, better colors, net/io/kernel schedulers well chosen, 1000Hz kernel ticker and mouse polling, everything working oob
 
-# Download as appimage: viber, photocraft, comfyui, viewskater
-
 if [ "$(id -u)" -ne 0 ]; then
     echo "This script must be run as root." >&2
     exit 1
@@ -32,11 +30,10 @@ RESET='\033[0m'
 echo -e "${GREEN}Installing software${RESET}" 
 pacman -Syyu --noconfirm
 cachyos-rate-mirrors
-pacman -S --needed --noconfirm linux-cachyos-bore linux-cachyos-bore-headers linux-cachyos-bore-nvidia-open nvidia-utils steam brave-bin doublecmd-qt6 zed veracrypt dkms python-pip qbittorrent discord nvtop iotop-c bc 7zip fio kodi handbrake mkvtoolnix-gui hardinfo2 cpu-x skanlite skanpage
+pacman -S --needed --noconfirm linux-cachyos-bore linux-cachyos-bore-headers linux-cachyos-bore-nvidia-open nvidia-utils steam brave-bin doublecmd-qt6 zed veracrypt dkms python-pip qbittorrent discord nvtop iotop-c bc 7zip fio kodi handbrake mkvtoolnix-gui hardinfo2 cpu-x sane htop ntfs-3g mc
 
-# maybe later: pciutils sudo-rs uutils-coreutils ntpd-rs bottom rustnet netscanner
-
-
+# Download as appimage: viber, photocraft, comfyui, viewskater, scanmypaper
+# Maybe install later: pciutils sudo-rs uutils-coreutils ntpd-rs bottom rustnet netscanner
 # These are installed by default: plymouth wayland pipewire wireplumber pipewire-pulse git python3 bluez bluez-utils npm gcc make meld fish vim cifs-utils tar mpv
 
 echo "Run: vim /boot/EFI/refind/refind.conf
